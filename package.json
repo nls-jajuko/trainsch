@@ -1,0 +1,26 @@
+{
+  "name": "kiinteistojaotus-features",
+  "main": "index.js",
+  "dependencies": {
+    "@mapbox/mapbox-gl-style-spec": "^13.14.0",
+    "mapbox-to-css-font": "^2.4.0",
+    "ol": "6.5.0",
+    "ol-mapbox-style": "6.3.2",
+    "proj4": "^2.7.0",
+    "webfont-matcher": "^1.1.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build --public-url . index.html"
+  },
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ]
+}

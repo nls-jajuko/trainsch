@@ -1,0 +1,162 @@
+{
+    "version": 8,
+    "name": "NLS Basemap",
+    "center": [
+        24.75455625,
+        60.18793718
+    ],
+    "zoom": 15,
+    "sources": {
+        "rasteritaustakartta": {
+            "type": "raster",
+            "tileSize": 256,
+            "tiles": [
+                "https://avoin-karttakuva.maanmittauslaitos.fi/avoin/wmts/1.0.0/taustakartta/default/WGS84_Pseudo-Mercator/{z}/{y}/{x}.png?api-key=7cd2ddae-9f2e-481c-99d0-404e7bc7a0b2"
+            ]
+        },
+        "kipa": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": []
+            }
+        }
+    },
+    "glyphs": "https://avoin-karttakuva.maanmittauslaitos.fi/vectortiles/glyphs/{fontstack}/{range}.pbf?api-key=7cd2ddae-9f2e-481c-99d0-404e7bc7a0b2",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "white"
+            }
+        },
+        {
+            "id": "taustakartta",
+            "type": "raster",
+            "source": "rasteritaustakartta"
+        },
+        {
+            "id": "polygonstyle",
+            "type": "fill",
+            "source": "kipa",
+            "filter": [
+                "==",
+                [
+                    "geometry-type"
+                ],
+                "Polygon"
+            ],
+            "paint": {
+                "fill-color": "rgba(255,0,255,0.5)"
+            }
+        },
+        {
+            "id": "linestringstyle",
+            "type": "line",
+            "source": "kipa",
+            "filter": [
+                "==",
+                [
+                    "geometry-type"
+                ],
+                "LineString"
+            ],
+            "paint": {
+                "line-color": [
+                    "match",
+                    [
+                        "get",
+                        "api"
+                    ],
+                    "v1",
+                    "rgba(128,0,0,0.7)",
+                    "v2",
+                    "rgba(0,0,255,0.7)",
+                    "#000000"
+                ],
+                "line-width": [
+                    "match",
+                    [
+                        "get",
+                        "api"
+                    ],
+                    "v1",
+                    1,
+                    "v2",
+                    1,
+                    1
+                ]
+            }
+        },
+        {
+            "id": "pointstyle_base",
+            "type": "circle",
+            "source": "kipa",
+            "minzoom": 11,
+            "filter": [
+                "==",
+                [
+                    "geometry-type"
+                ],
+                "Point"
+            ],
+            "paint": {
+                "circle-stroke-color": "rgba(255,255,255,1)",
+                "circle-color": [
+                    "match",
+                    [
+                        "get",
+                        "api"
+                    ],
+                    "v1",
+                    "rgba(128,0,0,0.3)",
+                    "v2",
+                    "rgba(0,0,255,0.3)",
+                    "#000000"
+                ],
+                "circle-radius": [
+                    "match",
+                    [
+                        "get",
+                        "api"
+                    ],
+                    "v1",
+                    3,
+                    "v2",
+                    3,
+                    1
+                ]
+            }
+        }, {
+            "id": "pointstyle",
+            "type": "circle",
+            "source": "kipa",
+            "minzoom": 11,
+            "filter": [
+                "==",
+                [
+                    "geometry-type"
+                ],
+                "Point"
+            ],
+            "paint": {
+                "circle-stroke-color": "rgba(255,255,255,1)",
+                "circle-color": "#ffffff",
+                "circle-radius": [
+                    "match",
+                    [
+                        "get",
+                        "api"
+                    ],
+                    "v1",
+                    2,
+                    "v2",
+                    2,
+                    1
+                ]
+            }
+        }
+    ],
+    "id": "NLS-Basemap"
+}
