@@ -55,6 +55,7 @@
             "id": "linestringstyle",
             "type": "line",
             "source": "kipa",
+            "minzoom": 13,
             "filter": [
                 "==",
                 [
@@ -70,7 +71,7 @@
                         "api"
                     ],
                     "v1",
-                    "rgba(128,0,0,0.7)",
+                    "rgba(255,0,0,0.7)",
                     "v2",
                     "rgba(0,0,255,0.7)",
                     "#000000"
@@ -93,7 +94,7 @@
             "id": "pointstyle_base",
             "type": "circle",
             "source": "kipa",
-            "minzoom": 11,
+            "minzoom": 14,
             "filter": [
                 "==",
                 [
@@ -110,7 +111,7 @@
                         "api"
                     ],
                     "v1",
-                    "rgba(128,0,0,0.3)",
+                    "rgba(255,0,0,0.3)",
                     "v2",
                     "rgba(0,0,255,0.3)",
                     "#000000"
@@ -132,7 +133,7 @@
             "id": "pointstyle",
             "type": "circle",
             "source": "kipa",
-            "minzoom": 11,
+            "minzoom": 15,
             "filter": [
                 "==",
                 [

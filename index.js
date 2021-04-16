@@ -41,13 +41,11 @@ apply(
         rt = transform([bounds[2], bounds[3]], 'EPSG:3857', 'EPSG:4326'),
         bbox = [lb[0], lb[1], rt[0], rt[1]];
 
-      if (view.getResolution() > 20) {
-        return;
-      }
+     
       source.clear();
       document.getElementById('info').innerHTML = '';
 
-      if (map.getView().getResolution() < 16) {
+      if (map.getView().getZoom() >= 14) {
         colls.forEach(coll => {
           const api = coll.api, featType = coll.featType, url = coll.url;
 
