@@ -19,11 +19,11 @@ hash.addTo(map);
 const batchSize = 500,
 colls = [
   {
-    api: 'v1', url: 'https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/simple-features/v1',
+    api: 'v2', url: 'https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/simple-features/v2',
     featType: 'RajamerkinSijaintitiedot'
   },
   {
-    api: 'v1', url: 'https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/simple-features/v1',
+    api: 'v2', url: 'https://beta-paikkatieto.maanmittauslaitos.fi/kiinteisto-avoin/simple-features/v2',
     featType: 'KiinteistorajanSijaintitiedot'
   }
 ];
