@@ -35,66 +35,10 @@
             "id": "taustakartta",
             "type": "raster",
             "source": "rasteritaustakartta"
-        },
-        {
-            "id": "polygonstyle",
-            "type": "fill",
-            "source": "kipa",
-            "filter": [
-                "==",
-                [
-                    "geometry-type"
-                ],
-                "Polygon"
-            ],
-            "paint": {
-                "fill-color": "rgba(255,0,255,0.5)"
-            }
-        },
-        {
-            "id": "linestringstyle",
-            "type": "line",
-            "source": "kipa",
-            "minzoom": 13,
-            "filter": [
-                "==",
-                [
-                    "geometry-type"
-                ],
-                "LineString"
-            ],
-            "paint": {
-                "line-color": [
-                    "match",
-                    [
-                        "get",
-                        "api"
-                    ],
-                    "v1",
-                    "rgba(255,0,0,0.7)",
-                    "v2",
-                    "rgba(0,0,255,0.7)",
-                    "#000000"
-                ],
-                "line-width": [
-                    "match",
-                    [
-                        "get",
-                        "api"
-                    ],
-                    "v1",
-                    1,
-                    "v2",
-                    1,
-                    1
-                ]
-            }
-        },
-        {
-            "id": "pointstyle_base",
+        },  {
+            "id": "trains",
             "type": "circle",
             "source": "kipa",
-            "minzoom": 14,
             "filter": [
                 "==",
                 [
@@ -104,58 +48,8 @@
             ],
             "paint": {
                 "circle-stroke-color": "rgba(255,255,255,1)",
-                "circle-color": [
-                    "match",
-                    [
-                        "get",
-                        "api"
-                    ],
-                    "v1",
-                    "rgba(255,0,0,0.3)",
-                    "v2",
-                    "rgba(0,0,255,0.3)",
-                    "#000000"
-                ],
-                "circle-radius": [
-                    "match",
-                    [
-                        "get",
-                        "api"
-                    ],
-                    "v1",
-                    3,
-                    "v2",
-                    3,
-                    1
-                ]
-            }
-        }, {
-            "id": "pointstyle",
-            "type": "circle",
-            "source": "kipa",
-            "minzoom": 15,
-            "filter": [
-                "==",
-                [
-                    "geometry-type"
-                ],
-                "Point"
-            ],
-            "paint": {
-                "circle-stroke-color": "rgba(255,255,255,1)",
-                "circle-color": "#ffffff",
-                "circle-radius": [
-                    "match",
-                    [
-                        "get",
-                        "api"
-                    ],
-                    "v1",
-                    2,
-                    "v2",
-                    2,
-                    1
-                ]
+                "circle-color": "#0000a0",
+                "circle-radius": 5
             }
         }
     ],
